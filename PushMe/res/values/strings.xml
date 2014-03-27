@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">掌上校园</string>
+    <string name="tips">提示</string>
+    <string name="about">关于</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="loading">数据加载中，请稍候&#8230;</string>
+    <string name="image_content">Image</string>
+    <string name="teacher">老师</string>
+    <string name="student">学生</string>
+    <string name="parent">家长</string>
+    <string name="group">群组</string>
+    <string name="title_index">首页</string>
+    <string name="title_message">消息</string>
+    <string name="title_contact">通讯录</string>
+    <string name="title_more">更多</string>
+    <string name="label_account">账号 </string>
+    <string name="label_sutdent_no">学号</string>
+    <string name="userinfo">详细资料</string>
+    <string name="label_sex">性别 </string>
+    <string name="label_phone">手机 </string>
+    <string name="send_msg">发送消息</string>
+    <string name="login">登录</string>
+    <string name="send">发送</string>
+    <string name="search">搜索</string>
+    <string name="login_hit_userid">输入登录账号</string>
+    <string name="login_hit_password">输入密码</string>
+    <string name="forget_password">如果忘记密码请点击这里</string>
+    <string name="back">返回</string>
+    <string name="notice">通知公告</string>
+    <string name="homework">家庭作业</string>
+    <string name="daily">日常表现</string>
+    <string name="timetable">我的课表</string>
+    <string name="score">成绩信息</string>
+    <string name="groupsms">家校短信</string>
+    <string name="select_recv_user">请选择接收用户</string>
+    <string name="attendance">出勤记录</string>
+    <string name="consume">日常消费</string>
+    <string name="schoolbag">电子书包</string>
+    <string name="publish">发布于</string>
+    <string name="view_content">查看内容</string>
+    <string name="read_all">阅读全文</string>
+    <string name="edit">编辑</string>
+    <string name="refresh">更新</string>
+    <string name="network_exception">网络情况不给力！</string>
+    <string name="server_exception">服务器开了个小差，请稍后重试！</string>
+    <string name="parser_exception">解析服务器返回数据失败！</string>
+    <string name="network_offline">网络连接不可用，请启用您手机的网络访问功能！</string>
+    <string name="post_notice">发布通知</string>
+    <string name="notice_type">公告类型</string>
+    <string name="class_notice">班级公告</string>
+    <string name="class_name">班级名称</string>
+    <string name="school_notice">学校公告</string>
+    <string name="post_homework">发布家庭作业</string>
+    <string name="input_notice_title">请输入通知标题</string>
+    <string name="input_notice_content">请输入通知内容</string>
+    <string name="input_homework_content">请输入家庭作业内容</string>
+    <string name="input_message_content">请输入短信内容</string>
+    <string name="sumbit">提交</string>
+    <string name="my_account">我的账号</string>
+    <string name="change_class">切换班级</string>
+    <string name="clear_cache">清理缓存</string>
+    <string name="feedback">意见反馈</string>
+    <string name="system_setting">系统设置</string>
+    <string name="check_update">检查更新</string>
+    <string name="about_me">关于我们</string>
+    <string name="change_account">切换账号</string>
+    <string name="exit">退出</string>
+    
+    <string name="custom_text_hint">掌上校园系统通知</string>
+    <string name="title">标题</string>
+    <string name="content">内容</string>
+
+</resources>

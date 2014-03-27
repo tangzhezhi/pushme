@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.stinfo.pushme"
+    android:installLocation="auto"
+    android:versionCode="1"
+    android:versionName="1.0.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="19" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_DOWNLOAD_MANAGER" />
+    <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:resizeable="true"
+        android:smallScreens="true" />
+
+    <application
+        android:name="com.stinfo.pushme.MyApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/icon"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.stinfo.pushme.activity.WelcomeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/FullScreenTheme" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.stinfo.pushme.activity.GuideActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/FullScreenTheme" >
+        </activity>
+        <activity
+            android:name="com.stinfo.pushme.activity.LoginActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustUnspecified|adjustResize" >
+        </activity>
+        <activity
+            android:name="com.stinfo.pushme.activity.MainActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.stinfo.pushme.activity.MyAccountActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.stinfo.pushme.activity.FeedbackActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.stinfo.pushme.activity.SettingActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.stinfo.pushme.activity.AboutActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.stinfo.pushme.activity.UserInfoActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.stinfo.pushme.activity.ChatActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustUnspecified|adjustResize" >
+        </activity>
+        <activity
+            android:name="com.stinfo.pushme.activity.GroupChatActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustUnspecified|adjustResize" >
+        </activity>
+        <activity
+            android:name="com.stinfo.pushme.activity.NoticeActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.stinfo.pushme.activity.PostNoticeActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.stinfo.pushme.activity.NoticeDetailActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.stinfo.pushme.activity.HomeworkActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.stinfo.pushme.activity.PostHomeworkActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppCustomTheme" >
+        </activity>
+        <activity
+            android:name="com.stinfo.pushme.activity.DailyActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.stinfo.pushme.activity.PostDailyActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <service android:name="com.stinfo.pushme.service.UpdateService" >
+            <intent-filter>
+                <action android:name="com.stinfo.pushme.UPDATE_SERVICE" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </service>
+
+        <!-- push service start -->
+        <receiver android:name="com.stinfo.pushme.service.PushMessageReceiver" >
+            <intent-filter>
+                <action android:name="com.baidu.android.pushservice.action.MESSAGE" />
+                <action android:name="com.baidu.android.pushservice.action.RECEIVE" />
+                <action android:name="com.baidu.android.pushservice.action.notification.CLICK" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.baidu.android.pushservice.PushServiceReceiver"
+            android:process=":bdservice_v1" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="com.baidu.android.pushservice.action.notification.SHOW" />
+                <action android:name="com.baidu.android.pushservice.action.media.CLICK" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.baidu.android.pushservice.RegistrationReceiver"
+            android:process=":bdservice_v1" >
+            <intent-filter>
+                <action android:name="com.baidu.android.pushservice.action.METHOD" />
+                <action android:name="com.baidu.android.pushservice.action.BIND_SYNC" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name="com.baidu.android.pushservice.PushService"
+            android:exported="true"
+            android:process=":bdservice_v1" />
+
+        <meta-data
+            android:name="api_key"
+            android:value="bCGLn95jEMczctfRECfIda02" />
+        <!-- push service end -->
+    </application>
+
+</manifest>
